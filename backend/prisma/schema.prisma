@@ -10,9 +10,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model type_place {
+model place_type {
   id       String @id @default(uuid())
-  typeName String
+  nameType String
 
   place place[]
 }
@@ -24,6 +24,6 @@ model place {
 
   latitude     String
   longitude    String
-  type_place   type_place? @relation(fields: [type_placeId], references: [id])
-  type_placeId String?
+  place_type   place_type? @relation(fields: [place_typeId], references: [id])
+  place_typeId String?
 }

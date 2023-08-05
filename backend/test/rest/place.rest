@@ -1,0 +1,29 @@
+GET http://192.168.56.1:5000/place
+
+###
+GET http://192.168.56.1:5000/place/
+
+###
+POST http://192.168.56.1:5000/place
+Content-Type: application/json
+
+{
+    "name" : "PT Nganjuk",
+    "description" : "Ini PT Nganjuk pake nanya",
+
+    "latitude" : "-6.582904035919383",
+    "longitude" : "106.7681125658127",
+
+    "place_typeId" : "36854ace-2b0f-4998-b1c4-01c3e0135f0b"
+}
+
+###
+PUT  http://192.168.56.1:5000/place/
+Content-Type: application/json
+
+{
+    "name": "Kristen"
+}
+
+###
+DELETE http://192.168.56.1:5000/place/

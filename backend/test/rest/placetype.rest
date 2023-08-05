@@ -1,0 +1,23 @@
+GET http://192.168.56.1:5000/placetype
+
+###
+GET http://192.168.56.1:5000/placetype/e7889ec2-a8aa-4540-ab1e-5355dd114b51
+
+###
+POST http://192.168.56.1:5000/placetype
+Content-Type: application/json
+
+{
+    "nameType" : "Sekolah"
+}
+
+###
+PUT  http://192.168.56.1:5000/placetype/e7889ec2-a8aa-4540-ab1e-5355dd114b51
+Content-Type: application/json
+
+{
+    "nameType": "Kantor"
+}
+
+###
+DELETE http://192.168.56.1:5000/placetype/e7889ec2-a8aa-4540-ab1e-5355dd114b51

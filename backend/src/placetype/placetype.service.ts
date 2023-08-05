@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { type_place } from '@prisma/client';
+import { place_type } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 
@@ -7,27 +7,27 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class PlacetypeService {
     constructor(private prismaService: PrismaService) { }
 
-    async findAll(): Promise<type_place[]> {
-        return this.prismaService.type_place.findMany()
+    async findAll(): Promise<place_type[]> {
+        return this.prismaService.place_type.findMany()
     }
 
-    async findById(id: string): Promise<type_place> {
-        return this.prismaService.type_place.findFirst({ where: { id } })
+    async findById(id: string): Promise<place_type> {
+        return this.prismaService.place_type.findFirst({ where: { id } })
     }
 
-    async createData(data: { typeName: string }): Promise<type_place> {
-        return this.prismaService.type_place.create({ data })
+    async createData(data: { nameType: string }): Promise<place_type> {
+        return this.prismaService.place_type.create({ data })
     }
 
-    async updateData(id: string, data: { typeName: string }): Promise<type_place> {
-        return this.prismaService.type_place.update({
+    async updateData(id: string, data: { typeName: string }): Promise<place_type> {
+        return this.prismaService.place_type.update({
             where: { id },
             data
         })
     }
 
-    async deleteData(id: string): Promise<type_place> {
-        return this.prismaService.type_place.delete({ where: { id } })
+    async deleteData(id: string): Promise<place_type> {
+        return this.prismaService.place_type.delete({ where: { id } })
     }
 
 }

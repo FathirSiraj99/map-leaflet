@@ -7,7 +7,7 @@ async function bootstrap() {
   app.enableCors({
     origin: "*"
   });
-  await app.listen(process.env.PORT,'192.168.18.210',()=>{
+  await app.listen(process.env.PORT,'192.168.56.1',()=>{
     console.log('successfull connect')
   })
 }
