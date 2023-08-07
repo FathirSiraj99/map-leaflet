@@ -1,12 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as cors from 'cors'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: "*"
-  });
+  app.enableCors();
   await app.listen(process.env.PORT,'192.168.18.210',()=>{
     console.log('successfull connect')
   })

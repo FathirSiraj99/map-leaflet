@@ -6,6 +6,10 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class PlaceService {
     constructor (private prismaService : PrismaService){}
 
+    async findView(): Promise<place>{
+        return this.prismaService.$queryRawUnsafe ('SELECT typle_place.')
+    }
+
     async findAll(): Promise<place[]>{
         return this.prismaService.place.findMany()
     }
